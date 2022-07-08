@@ -14,7 +14,8 @@ async function main() {
 
     var tabela = new Table(dadosProcessados)
 
-    console.log(tabela.header)
+    console.log(tabela.RowCount)
+    console.log(tabela.ColumnCount)
 }
 
 main()
