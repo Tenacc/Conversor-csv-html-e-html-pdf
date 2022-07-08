@@ -3,6 +3,7 @@ var Processor = require('./Processor')
 var Table = require('./Table')
 var HtmlParser = require('./HtmlParser')
 var Writer = require('./Writer')
+var PDFWriter = require('./PDFWriter')
 
 var leitor = new Reader()
 var escritor = new Writer()
@@ -19,6 +20,8 @@ async function main() {
     var html = await HtmlParser.Parse(tabela)
 
     escritor.Write('htmlgerado.html',html)
+    PDFWriter.WritePDF('pdfgerado.PDF', html)
+    
 }
 
 main()
