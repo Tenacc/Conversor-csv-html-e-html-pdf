@@ -2,9 +2,10 @@ var Reader = require('./Reader')
 var Processor = require('./Processor')
 var Table = require('./Table')
 var HtmlParser = require('./HtmlParser')
+var Writer = require('./Writer')
 
 var leitor = new Reader()
-
+var escritor = new Writer()
 
 
 async function main() {
@@ -17,7 +18,7 @@ async function main() {
 
     var html = await HtmlParser.Parse(tabela)
 
-    console.log(html)
+    escritor.Write('htmlgerado.html',html)
 }
 
 main()
